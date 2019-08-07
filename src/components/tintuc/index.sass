@@ -1,0 +1,125 @@
+.tintuc
+    padding-top: 60px
+    .wrap
+        .title
+            margin-bottom: 20px
+            h2 
+                font-size: 36px
+                text-transform: uppercase
+                color: #00a3e6
+                text-align: center
+        .box-tintuc
+            .big
+                position: relative
+                img 
+                    width: 100%
+                .text
+                    position: absolute
+                    bottom: 20px
+                    left: 20px
+                    padding: 0 30px 
+                    date 
+                        background: #00a3e6 
+                        color: #ebebeb
+                        padding: 5px 10px
+                    h2
+                        font-size: 24px
+                        color: #ebebeb
+            .small
+                .item 
+                    background: #ebebeb
+                    
+                    figure
+                        position: relative
+                        .img 
+                            img 
+                                width: 100%
+                        date 
+                            position: absolute
+                            bottom: 0
+                            left: 20px
+                            background: #00a3e6
+                            padding: 5px 10px 
+                            color: #ebebeb
+                    figcaption 
+                        padding: 20px
+                        font-size: 18px 
+                        a
+                            font-size: 18px 
+                            color: #333333
+                        p 
+                            max-height: 55px
+                            overflow: hidden
+                            text-overflow: ellipsis
+                            -webkit-line-clamp: 2
+                            font-size: 16px 
+                            color: #333333
+                    &:hover
+                        figcaption
+                            a
+                                color: #00a3e6
+        .list-tintuc
+            padding: 30px 0
+            .item 
+                    background: #ebebeb
+                    margin-bottom: 30px
+                    figure
+                        position: relative
+                        .img 
+                            img 
+                                width: 100%
+                        date 
+                            position: absolute
+                            bottom: 0
+                            left: 20px
+                            background: #00a3e6
+                            padding: 5px 10px 
+                            color: #ebebeb
+                    figcaption 
+                        padding: 20px
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        -webkit-line-clamp: 2
+                        max-height: 80px
+                        a
+                            font-size: 18px 
+                            color: #333333
+                            
+                        p 
+                            font-size: 16px 
+                            color: #333333
+.pagination
+    text-align: center
+    display: flex
+    justify-content: center
+    margin-bottom: 30px
+    .PagerCurrentPageCell
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 15px
+        margin-right: 20px
+        font-size: 16px
+        width: 30px
+        height: 30px
+        text-align: center
+        align-items: center
+        background: #ebebeb
+        &.active
+            background: #00a3e6
+            span
+                color: #ffff
+        span 
+            color: #333333
+    .PagerOtherPageCells
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 15px
+        margin-right: 20px
+        font-size: 16px
+        width: 30px
+        height: 30px
+        text-align: center
+        align-items: center
+        background: #ebebeb

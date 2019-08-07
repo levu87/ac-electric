@@ -1,0 +1,12 @@
+extends _layout.pug
+
+block var
+	- var title = 'chi tiet dich vu'
+	- var bodyClass = 'chitietdichvu-page'
+
+block main
+	include ../components/chitietdichvu/banner/index
+	include ../components/chitietdichvu/nangtam/index
+	include ../components/chitietdichvu/congtrinh/index
+	include ../components/chitietdichvu/biquyet/index
+	include ../components/tailieu/index

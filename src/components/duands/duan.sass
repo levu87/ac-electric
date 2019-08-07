@@ -1,0 +1,91 @@
+.danhmuc-wrap
+    padding: 60px
+    @media (max-width: 768px)
+        padding: 40px 0
+    .title 
+        h2 
+            font-size: 36px
+            color: #00a3e6 
+            text-transform: uppercase
+            text-align: center
+    .danhmuc 
+        display: flex
+        padding: 20px 0
+        flex-wrap: wrap
+        justify-content: center
+        .button
+            display: flex 
+            text-align: center 
+            align-items: center
+            margin: 10px
+            width: 200px
+            height: 40px
+            justify-content: center
+            border: 1px solid #00a3e6
+            transition: all 0.3s ease-in-out
+            text-transform: uppercase
+            color: #00a3e6
+            padding: 20px 0
+            &:hover
+                background: #00a3e6
+                color: #ebebeb
+    .duan
+        .item 
+            figure
+                .figure-image
+                    display: block
+                    height: 260px
+                    width: 100%
+                    img 
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                figcaption
+                    padding: 10px 0
+                    p 
+                        font-size: 14px 
+                        color: #666666 
+                        text-transform: uppercase
+                        &:after
+                            content: ''
+                            display: block 
+                            height: 2px 
+                            width: 40px 
+                            background: #fff100
+                            margin: 5px 0
+                    h3 
+                        a
+                            font-size: 20px 
+                            text-transform: uppercase
+                            color: #333333
+                &:hover
+                    h3 
+                        color: #00a3e6
+    .pagination
+            text-align: center
+            display: flex
+            justify-content: center
+            margin-top: 30px
+            .items
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 15px
+                margin-right: 20px
+                font-size: 16px
+                width: 30px
+                height: 30px
+                text-align: center
+                align-items: center
+                background: #ebebeb
+                &.active
+                    background: #00a3e6
+                    a
+                        color: #ffff
+                a 
+                    color: #333333
+
+
+            
+            
+

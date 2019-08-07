@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'chi tiet san pham'
+	- var bodyClass = 'chitietsanpham-page'
+
+block main
+	include ../components/sanpham/banner/index
+	include ../components/chitietsanpham/index

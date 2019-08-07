@@ -1,0 +1,404 @@
+header
+    position: fixed
+    z-index: 999
+    width: 100%
+    background: #ffff
+    .top-head
+        position: relative
+        &:before
+            width: 100%
+            height: 1px
+            content: ''
+            display: block
+            position: absolute
+            bottom: 0
+            background: #e1e1e1
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 10px 0
+            .box-l
+                .logo-ac
+                    img 
+                        width: 150px
+                @media (max-width: 768px)
+                    .logo-ac 
+                        margin-left: 20px
+                @media (max-width: 576px)
+                    .logo-ac 
+                        img 
+                            width: 130px
+                
+            .box-r
+                display: flex
+                align-items: center
+                .Module.Module-210
+                    display: flex 
+                    align-items: center
+                    .hotro
+                        list-style: none
+                        padding: 0
+                        li 
+                            display: inline-block
+                            margin-right: 30px
+                            a 
+                                color: #333333
+                                text-transform: uppercase
+                                font-weight: 600
+                                transition: all 0.3s ease-in-out
+                                &:hover
+                                    color: #00a3e6 
+
+                    .searchbox
+                        display: flex
+                        border: none
+                        background: #ebebeb
+                        justify-content: space-around
+                        margin-right: 20px
+                        padding: 5px 10px
+                        input
+                            border: none
+                            background: none
+                            padding: 
+                            color: #999999
+                            font-size: 16px   
+                            width: 100%
+                            font-style: italic
+                        button
+                            background: none
+                            border: none
+                            cursor: pointer
+                            &:focus
+                                outline: none
+                            em 
+                                color: #999999
+                        input,button
+                            &:focus
+                                outline: none
+                    .call
+                        margin-left: auto
+                        padding: 5px 20px
+                        background: #00a3e6
+                        color: #ffff
+                        font-weight: bold
+                        em 
+                            margin-right: 10px
+                    .language
+                        margin-left: 20px
+                        width: 70px
+                        text-align: center
+                        .lag-active
+                            position: relative
+                            span
+                                color: #333333
+                                font-weight: 600
+                            svg
+                                width: 10px
+                                margin-left: 10px
+                            &.active
+                                span
+                                svg
+                                    transform: rotate(180deg)
+                                    transition: all .5s ease-in-out
+                        .list-lag
+                            width: 70px
+                            position: absolute
+                            bottom: -67px
+                            display: block
+                            background: #00a3e6
+                            z-index: 1
+                            pointer-events: none
+                            opacity: 0
+                            transition: all .5s ease-in-out
+                            li
+                                list-style: none
+                                text-align: center
+                                padding: 5px 0
+                                a 
+                                    color: #ebebeb
+                                    padding: 16px
+                                    font-weight: 600
+                                    text-transform: uppercase
+                                    &:hover
+                                        color: #333333
+                            &.active 
+                                display: block
+                                max-height: auto 
+                                opacity: 1
+                                pointer-events: auto
+    .ac-home-menu
+        padding: 0
+        position: relative
+        .menu-wrapper
+            position: relative
+            padding: 0
+            height: 65px
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            .main-menu
+                position: relative
+                ul
+                    list-style: none
+                    text-align: left
+                    padding: 0
+                    li 
+                        display: inline-block
+                        margin-right: 30px
+                        padding: 20px 0
+                        a 
+                            color: #333333
+                            text-transform: uppercase
+                            font-weight: 600
+                            transition: all 0.3s ease-in-out
+                        &:hover
+                            a
+                                color: #00a3e6
+                        &.has-dropdown
+                            position: relative
+                            ul 
+                                opacity: 0
+                                pointer-events: none
+                                width: 200px
+                                padding: 0 
+                                background: #ffff
+                                position: absolute
+                                top: 100%
+                                left: 85px
+                                transform: translateX(-50%)
+                                z-index: 99
+                                transition: .5s ease-in-out all
+                                li 
+                                    padding: 10px
+                                    width: 100%
+                                    a
+                                        color: #333333
+                                        font-size: 12px
+                                    &:hover
+                                        a
+                                            color: #00a3e6
+                                            transition: all 0.35s ease
+                            &:hover 
+                                ul
+                                    border-top: 2px solid #00a3e6
+                                    opacity: 1
+                                    pointer-events: initial
+                        &.has-mega
+                            .mega-wrap
+                                position: absolute
+                                top: 80px
+                                left: 0
+                                width: 100%
+                                padding: 20px
+                                background: #ffff
+                                border-top: 2px solid #00a3e6
+                                z-index: 9
+                                display: flex
+                                opacity: 0
+                                pointer-events: none
+                                z-index: 9
+                                transition: all 0.5s ease-in-out
+                                .item 
+                                    flex-grow: 1
+                                    flex-basis: 0
+                                    .img 
+                                        img 
+                                            width: 100px
+                                            height: auto
+                                    .title 
+                                        padding-top: 10px
+                                        h4 
+                                           font-size: 12px
+                                           color: #333333
+                                           &:hover
+                                               color: #00a3e6 
+                                               transition: all .3s ease-in-out
+                        &:hover 
+                            .mega-wrap
+                                border-top: 2px solid #00a3e6
+                                opacity: 1
+                                pointer-events: initial
+                                top: 65px
+                                
+                                               
+            .toggle-menu
+                left: -300px
+                position: fixed
+                width: 300px
+                top: 130px
+                height: calc(100vh)
+                z-index: 99
+                background: #ffff
+                
+                &.active 
+                    left: 0
+            .toggle-button
+                // order: 1
+                width: 2rem
+                height: 2rem
+                display: none
+                justify-content: center
+                align-items: center
+                .hamburger--spring
+                    outline: none
+                    padding: 0
+                    .hamburger-box
+                        .hamburger-inner
+                            width: 30px
+                            &:after
+                                width: 30px
+                            &:before
+                                width: 30px
+                    @media (max-width: 768px)
+                        margin-left: 20px
+                        
+        .list-hotro
+            list-style: none   
+            position: fixed
+            right: 0
+            top: 290px 
+            li 
+                display: flex
+                justify-content: center
+                align-items: center
+                background: #00a3e6   
+                width: 50px
+                height: 50px
+                font-size: 25px
+                color: #ffffff
+                margin-bottom: 5px
+                em 
+                    color: #ffffff
+                // .button
+                //     height: 2px
+                //     width: 30px
+                //     background: #333
+                //     position: relative
+                //     transition: all 0ms 300ms
+                //     &:after
+                //         content: ""
+                //         position: absolute
+                //         left: 0
+                //         width: 100%
+                //         height: 100%
+                //         bottom: 8px
+                //         background: #333
+                //         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                //     &:before
+                //         content: ""
+                //         position: absolute
+                //         left: 0
+                //         width: 100%
+                //         height: 100%
+                //         top: 8px
+                //         background: #333
+                //         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                // &.active
+                //     .button
+                //         background: transparent
+                //         &:before
+                //             top: 0
+                //             transform: rotate(45deg)
+                //             transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                //         &:after
+                //             bottom: 0
+                //             transform: rotate(-45deg)
+                //             transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+@media (max-width: 1025px)
+    header
+        .ac-home-menu
+            .menu-wrapper
+                display: flex
+                align-items: center
+                margin: 0
+                .main-menu
+                    display: none
+                .toggle-button
+                    display: block
+                .toggle-menu
+                    .hotro 
+                        padding: 0
+                        background: #00a3e6 
+                        list-style: none 
+                        li 
+                            padding: 15px 0
+                            text-align: center
+                            a 
+                                color: #ebebeb
+                                font-weight: 600
+                                text-transform: uppercase
+                    &.active
+                        .main-menu
+                            display: block
+                            ul 
+                                li 
+                                    display: block
+                                    text-align: center
+                                    border: .2px solid #ebebeb
+                                    margin-right: 0
+                                    &.has-dropdown,&.has-mega
+                                        margin: 0
+                                        ul  
+                                            display: none
+                                            width: 150%
+                                             
+                .searchbox
+                    display: flex
+                    border: none
+                    background: #ebebeb
+                    justify-content: space-around
+                    margin-right: 20px
+                    padding: 5px 10px
+                    margin-left: auto
+                    input
+                        border: none
+                        background: none
+                        padding: 
+                        color: #999999
+                        font-size: 16px   
+                        width: 100%
+                        font-style: italic
+                    button
+                        background: none
+                        border: none
+                        cursor: pointer
+                        &:focus
+                            outline: none
+                        em 
+                            color: #999999
+                    input,button
+                        &:focus
+                            outline: none
+                .call 
+                    width: 100%
+                    background: #333333
+                    color: #ebebeb
+                    padding: 10px 0
+                    text-align: center
+                    letter-spacing: 5px
+                    em 
+                        margin-right: 10px
+                        transform: rotate(-30deg)
+                // .backdrop
+                //     position: fixed
+                //     width: 100%
+                //     opacity: 0
+                //     pointer-events: none
+                //     transition: all 0.5s ease-in-out
+                //     height: 100vh
+                //     top: 0
+                //     left: 0
+                //     z-index: 99
+                //     &.active
+                //         opacity: 1
+                //         pointer-events: initial
+                //         transition: all 0.5s ease-in-out
+    .ac-home-menu
+        .menu-wrapper
+            margin: 0 20px
+            .toggle-button
+                left: 20px
+                    
+                        
+                        

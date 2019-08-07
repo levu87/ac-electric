@@ -1,0 +1,9 @@
+extends _layout.pug
+
+block var
+	- var title = 'san pham'
+	- var bodyClass = 'sanpham-page'
+
+block main
+	include ../components/sanpham/banner/index
+	include ../components/sanpham/sanphamrival/index

@@ -1,0 +1,51 @@
+section.lienhe 
+    .container 
+        .title 
+            h2 AC Electric
+            p Quý khách vui lòng điền thông tin vào mẫu bên dưới và gửi những góp ý, thắc mắc cho AC Electric,chúng tôi sẽ phản hồi email của Quý khách trong thời gian sớm nhất.
+        .chitiet 
+            .call 
+                em.mdi.mdi-phone
+                h4 Liên hệ 
+                p
+                    strong Tel: 
+                    |+ 84 251 3511179 
+                p 
+                    strong Fax: 
+                    |+ 84 251 3512005
+            .diachi 
+                em.mdi.mdi-map-marker
+                h4 Địa chỉ
+                p Lô 33, KCN Tam Phước, Tp. Biên Hòa, Tỉnh Đồng Nai
+            .email
+                em.mdi.mdi-email
+                h4 Email
+                p InforAC@gmail.com
+    .form
+        
+        .row
+            .col-md-6
+                .left
+                    iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d178822.7535038694!2d106.92981778944154!3d10.975767277649178!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e0213ee5d50d%3A0xdab57989a0ade95d!2sTam+Phuoc+Industrial+Zone!5e0!3m2!1sen!2s!4v1564556722491!5m2!1sen!2s', width='600', height='450', frameborder='0', style='border:0', allowfullscreen='')
+            .col-md-6.right
+                p LIÊN HỆ VỚI CHÚNG TÔI
+                form(action="")
+                    .row
+                        .col-6
+                            label(for="") Họ & tên
+                            input(type="text")
+                        .col-6
+                            label(for="") Số điện thoại
+                            input(type="text")
+                    label(for="") Email
+                    input(type="text")
+                    label(for="") Khu vực
+                    select(name="") khu vuc
+                        option(value="") Hồ chí minh
+                    label(for="") Ghi chú
+                    textarea(name="", cols="30", rows="5")
+                    input(type="submit", value="Gửi")
+
+
+
+

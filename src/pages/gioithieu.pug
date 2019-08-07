@@ -1,0 +1,12 @@
+extends _layout.pug
+
+block var
+	- var title = 'chitietdichvu'
+	- var bodyClass = 'chitietdichvu-page'
+
+block main
+	include ../components/gioithieu/banner/index
+	include ../components/home/gioithieu/index
+	include ../components/home/kinhnghiem/index
+	include ../components/gioithieu/sanpham/index
+	include ../components/home/doitac/index

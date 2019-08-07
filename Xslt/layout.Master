@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/App_MasterPages/layout.Master.cs" Inherits="CanhCam.Web.layout" %>
+
+<!DOCTYPE html>
+<html id="Html1" runat="server">
+<head id="Head1" runat="server">
+    <title></title>
+    <portal:MetaContent ID="MetaContent" runat="server" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <portal:StyleSheetCombiner ID="StyleSheetCombiner" runat="server" IncludejQueryUI="false" JQueryUIThemeName="smoothness" />
+    <portal:Favicon ID="Favicon1" runat="server" />
+    <portal:ScriptLoader ID="ScriptLoader1" runat="server" IncludejQueryUICore="true" IncludeFancyBox="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript1" runat="server" ScriptFileName="js/addons.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript4" runat="server" ScriptFileName="js/jquery.zoom.min.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript2" runat="server" ScriptFileName="js/main.js" AddToCombinedScript="true" />
+    <portal:SkinFolderScript ID="SkinFolderScript3" runat="server" ScriptFileName="js/ecommerce.js" AddToCombinedScript="true" />
+    <portal:GoogleAnalyticsScript ID="GoogleAnalyticsScript1" runat="server" />
+
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+    <!--*********************************************************************************************-->
+    <!-- Canh Cam - the best Web Solutions Provider - http://www.canhcam.vn                          -->
+    <!-- 156 Nguyen Van Thu, District 1, Ho Chi Minh City, Viet Nam.                                 -->
+    <!-- Phone: (+84) 8 38238364 – Fax: (+84) 8 38238365 - Email: info@canhcam.vn                    -->
+    <!-- Facebook: https://www.facebook.com/canhcam.vn                                               -->
+    <!--*********************************************************************************************-->
+</head>
+<body id="Body" runat="server" class="canhcam">
+    <portal:FacebookSdk ID="fbsdk" runat="server" />
+    <portal:LayoutDisplaySettings ID="LayoutDisplaySettings1" runat="server" />
+    <form id="frmMain" runat="server">
+        <asp:SiteMapDataSource ID="SiteMapData" runat="server" ShowStartingNode="false" />
+        <asp:SiteMapDataSource ID="PageMapDataSource" runat="server" ShowStartingNode="false" />
+        <asp:SiteMapDataSource ID="ChildPageSiteMapData" runat="server" ShowStartingNode="false" />
+        <asp:ScriptManager ID="ScriptManager1" EnablePageMethods="true" runat="server" />
+        <div id="wrapper">
+            <header> 
+			<div class="top-head">
+				<div class="container">
+					<div class="box-l">
+						<div class="logo-ac"><portal:modulewrapper id="mdl206" runat="server" configuremoduleid="206" /></div>
+					</div>
+					<div class="box-r">
+						<ul class="hotro">
+							<portal:modulewrapper id="mdl211" runat="server" configuremoduleid="211" />
+						</ul>
+                            <portal:modulewrapper id="mdl209" runat="server" configuremoduleid="209" />
+						
+						<div class="call"><portal:modulewrapper id="mdl208" runat="server" configuremoduleid="208" /></div>
+						<portal:modulewrapper id="mdl210" runat="server" configuremoduleid="210" />
+					</div>
+				</div>
+			</div>
+			<div class="ac-home-menu container">
+				<div class="menu-wrapper">
+					<div class="main-menu">
+                            <portal:modulewrapper id="mdl214" runat="server" configuremoduleid="214" />
+					</div>
+					<div class="toggle-button">
+						<div class="hamburger hamburger--spring"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div>
+					</div>
+					<div class="toggle-menu"></div>
+				</div>
+                <div class="list-hotro"> 
+					<li><a href=""><em class="mdi mdi-headset"></em></a></li>
+					<li><a href=""><em class="mdi mdi-facebook"></em></a></li>
+					<li><a href=""><em class="mdi mdi-phone-in-talk"></em></a></li>
+				</div>
+			</div>
+		</header>
+            <asp:Panel ID="divAlt1" runat="server" CssClass="altcontent1">
+                <asp:ContentPlaceHolder ID="altContent1" runat="server">
+                </asp:ContentPlaceHolder>
+            </asp:Panel>
+            <main>
+                <asp:Panel ID="divLeft" runat="server" CssClass="leftside" Visible="True" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="leftContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+				<asp:Panel ID="divCenter" runat="server" Visible="True" CssClass="center-rightandleftmargins" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="mainContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+				<asp:Panel ID="divRight" runat="server" Visible="True" CssClass="rightside" SkinID="pnlPlain">
+					<asp:ContentPlaceHolder ID="rightContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</asp:Panel>
+            </main>
+            
+            <footer>
+                    <section class="ac-footer" setBackground="/Data/Sites/1/skins/default/img/footer.png">
+                        <footer>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="logo-footer"><portal:modulewrapper id="mdl224" runat="server" configuremoduleid="224"/></div>
+                                </div>
+                                <div class="row">
+                                    <div class="diachi">
+                                        <div class="item">
+                                            <portal:modulewrapper id="mdl215" runat="server" configuremoduleid="215"/>
+                                        </div>
+                                        <div class="item">
+                                            <portal:modulewrapper id="mdl216" runat="server" configuremoduleid="216"/>
+                                        </div>
+                                        <div class="item">
+                                            <portal:modulewrapper id="mdl217" runat="server" configuremoduleid="217"/>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer-bottom">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6 ft-col">
+                                            <portal:modulewrapper id="mdl219" runat="server" configuremoduleid="219"/>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 ft-col">
+                                                <portal:modulewrapper id="mdl221" runat="server" configuremoduleid="221"/>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 ft-col">
+                                                <portal:modulewrapper id="mdl223" runat="server" configuremoduleid="223"/>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 ft-lienhe">
+                                                <portal:modulewrapper id="mdl226" runat="server" configuremoduleid="226"/>
+                                                <portal:modulewrapper id="mdl227" runat="server" configuremoduleid="227"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="copyright">
+                                    <p>Copyright 2019 by AC Electric. All right reserved. Designed by <a href="https://canhcam.vn">Cánh Cam.            </a></p>
+                                </div>
+                            </div>
+                            <div class="call-icon"> <a class="phone-ac" href=""><em class="mdi mdi-phone"></em></a></div>
+                        </footer>
+                    </section>
+            </footer>
+        </div>
+        <script src="/Data/Sites/1/skins/default/js/core.min.js?v=1.0.0"></script>
+		<script src="/Data/Sites/1/skins/default/js/main.min.js?v=1.0.0"></script>
+        <portal:AutoHidePanel ID="ah1" CssClass="cmsadminpanel" runat="server">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav>
+                        <ul class="nav navbar-nav listmenu">
+                            <portal:AdminMenuLink ID="lnkDashboard" IconCssClass="fa fa-key" RenderAsListItem="true" runat="server" />
+                            <portal:FileManagerLink ID="lnkFileManager" IconCssClass="fa fa-folder-open" RenderAsListItem="true" runat="server" />
+                            <portal:PageEditFeaturesLink ID="lnkPageContent" IconCssClass="fa fa-cog" RenderAsListItem="true" runat="server" />
+                            <portal:PageEditSettingsLink ID="lnkPageSettings" IconCssClass="fa fa-edit" RenderAsListItem="true" runat="server" />
+                            <portal:NewZoneLink ID="lnkNewZone" IconCssClass="fa fa-file" RenderAsListItem="true" runat="server" />
+                            <portal:ZoneEditSettingsLink ID="lnkZoneSettings" IconCssClass="fa fa-edit" RenderAsListItem="true" runat="server" />
+                            <li>
+                                <div class="form-inline">
+                                    <div class="form-group">
+                                        <label class="sr-only">Mode</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:ContentPlaceHolder ID="pageEditContent" runat="server">
+                                        </asp:ContentPlaceHolder>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li><a href="#" id="pullmenucms"><i class="fa fa-chevron-circle-right"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#pullmenucms").click(function (e) {
+                        e.preventDefault();
+                        if ($(this).parents('.cmsadminpanel').hasClass('toggled')) { ShowToolbar(); Set_Cookie('toolbarOpenState', 'open'); }
+                        else { HideToolbar(); Set_Cookie('toolbarOpenState', 'closed'); }
+                    });
+                    var openState = Get_Cookie('toolbarOpenState');
+                    if (openState != null) { if (openState == 'closed') { HideToolbar(); } if (openState == 'open') { ShowToolbar(); } }
+                });
+                function HideToolbar() { $('.cmsadminpanel').addClass("toggled"); $('.fa-chevron-circle-right').addClass('fa-rotate-180'); }
+                function ShowToolbar() { $('.cmsadminpanel').removeClass("toggled"); $('.fa-chevron-circle-right').removeClass('fa-rotate-180'); }
+            </script>
+        </portal:AutoHidePanel>
+        <portal:Woopra ID="woopra11" runat="server" />
+    </form>
+</body>
+</html>

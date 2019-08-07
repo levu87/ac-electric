@@ -1,0 +1,32 @@
+.tailieu 
+    padding: 0
+    .banner
+        width: 100%
+        height: 400px
+        position: relative
+        .breadcumb
+            position: absolute
+            bottom: 0px
+            left: 0
+            padding: 10px 0
+            width: 100%
+            background: #565e67
+            opacity: 0.9
+            ul 
+                list-style: none
+                li 
+                    display: inline-block
+                    margin-right: 20px     
+                    a 
+                        color: #ebebeb
+                li:nth-child(2)
+                    position: relative
+                    &:before
+                        position: absolute
+                        content: ''
+                        display: block
+                        bottom: 3px
+                        left: -13px
+                        width: 2px
+                        height: 15px
+                        background: #ebebeb

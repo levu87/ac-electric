@@ -1,0 +1,155 @@
+.sanpham
+    background: #f5f5f5
+    padding: 60px 0
+    .sanpham-wrap
+        .title
+            h1 
+                font-size: 36px
+                text-align: center
+                text-transform: uppercase
+                color: #00a3e6
+        @media (max-width: 576px)
+            .title
+                h1 
+                    font-size: 30px
+        .navi
+            display: flex
+            padding: 20px 0
+            flex-wrap: wrap
+            justify-content: center
+            .button
+                display: flex 
+                text-align: center 
+                align-items: center
+                margin: 10px
+                width: 200px
+                height: 40px
+                justify-content: center
+                border: 1px solid #00a3e6
+                transition: all 0.3s ease-in-out
+                a 
+                    text-transform: uppercase
+                    color: #00a3e6
+                    padding: 20px 0
+                    transition: all 0.3s ease-in-out
+                &:hover
+                    background: #00a3e6
+                    a 
+                        color: #ebebeb
+
+
+        .tab-content
+            display: none        
+            &.current
+                display: inherit
+                transition: 0.3s ease-in-out
+            .list-sanpham
+                display: flex
+                flex-wrap: wrap
+                margin-right: -15px
+                margin-left: -15px
+                background: #f5f5f5
+                .item
+                    max-width: 20%
+                    flex: 0 0 20%
+                    position: relative
+                    padding: 0 5px  
+                    margin-bottom: 10px
+                    @media (max-width: 1200px)
+                        -webkit-box-flex: 0
+                        flex: 0 0 33.333333%
+                        max-width: 33.333333%
+                    @media (max-width: 1025px) 
+                        -webkit-box-flex: 0
+                        max-width: 50%
+                        flex: 0 0 50%
+                    @media (max-width: 480px)
+                        max-width: 100%
+                        flex: 0 0 100%
+                    figure
+                        background: #ffffff
+                        .img
+                            height: 230px
+                            width: auto
+                            img
+                                width: 100%
+                                height: 100%
+                                object-fit: scale-down
+                        figcaption
+                            bottom: 0
+                            padding: 20px
+                            background: #ffffff
+                            span
+                                font-size: 16px
+                                font-weight: 600
+                                color: #999999
+                                text-transform: uppercase
+                            h4
+                                font-size: 16px
+                                color: #333333
+                                font-weight: 600
+                            a 
+                                color: #00a3e6
+                                font-size: 16px
+                                font-weight: 600
+                .viral-img
+                    .img
+                        height: 366px
+                        width: auto
+                        img 
+                            width: 100%
+                            height: 100%
+                            object-fit: initial
+        .viewmore
+            position: relative
+            text-align: center
+            margin: 50px 0
+            a 
+                padding: 1rem 5rem
+                background: #f7d309
+                color: #333333
+                font-weight: 600
+                em
+                    margin-left: 10px
+                    font-weight: 600
+            &:after 
+                content: ''
+                z-index: -1
+                background-color: hsla(0, 0%, 100%, 0.2)
+                position: absolute
+                top: -50%
+                bottom: -50%
+                width: 1.25em
+                transform: translate3d(-525%, 0, 0) rotate(35deg)
+            &:hover
+                &:after 
+                    transition: transform 0.45s ease-in-out
+                    transform: translate3d(200%, 0, 0) rotate(35deg)
+
+        .banner-sp
+            .left
+                img 
+                    width: 100%
+            .right
+                img 
+                    width: 100%
+@media (max-width: 768px)
+    .sanpham
+        padding: 40px 0
+        .sanpham-wrap
+            .banner-sp
+                .left
+                    flex: 0 0 100%
+                    max-width: 100%
+                    margin-bottom: 15px
+                .right
+                    flex: 0 0 100% 
+                    max-width: 100%
+@media (max-width: 576px)
+    .sanpham
+        .sanpham-wrap
+            .navi
+                display: flex
+                justify-content: center
+                a 
+                    font-size: 12px
