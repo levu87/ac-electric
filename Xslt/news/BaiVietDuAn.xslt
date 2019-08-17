@@ -22,7 +22,7 @@
                             <xsl:value-of select="Title"></xsl:value-of>
                         </xsl:attribute>
                     </h1>
-				<p><xsl:value-of disable-output-escaping="yes" select="Briefcontent"></xsl:value-of></p>
+				<p><xsl:attribute name="BriefContent"></xsl:attribute></p>
                 </div>
 				<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 			</div>

@@ -3,6 +3,8 @@ header
     z-index: 999
     width: 100%
     background: #ffff
+    &.fixed
+        box-shadow: 0 0 8px rgba(0,0,0,.15)
     .top-head
         position: relative
         &:before
@@ -33,100 +35,98 @@ header
             .box-r
                 display: flex
                 align-items: center
-                .Module.Module-210
-                    display: flex 
-                    align-items: center
-                    .hotro
-                        list-style: none
-                        padding: 0
-                        li 
-                            display: inline-block
-                            margin-right: 30px
+                .hotro
+                    list-style: none
+                    padding: 0
+                    li 
+                        display: inline-block
+                        margin-right: 30px
+                        a 
+                            color: #333333
+                            text-transform: uppercase
+                            font-weight: 600
+                            transition: all 0.3s ease-in-out
+                            &:hover,&:active
+                                color: #00a3e6 
+                        &.active
                             a 
-                                color: #333333
-                                text-transform: uppercase
-                                font-weight: 600
-                                transition: all 0.3s ease-in-out
-                                &:hover
-                                    color: #00a3e6 
-
-                    .searchbox
-                        display: flex
+                                color: #00a3e6
+                .searchbox
+                    display: flex
+                    border: none
+                    background: #ebebeb
+                    justify-content: space-around
+                    margin-right: 20px
+                    padding: 5px 10px
+                    input
                         border: none
-                        background: #ebebeb
-                        justify-content: space-around
-                        margin-right: 20px
-                        padding: 5px 10px
-                        input
-                            border: none
-                            background: none
-                            padding: 
-                            color: #999999
-                            font-size: 16px   
-                            width: 100%
-                            font-style: italic
-                        button
-                            background: none
-                            border: none
-                            cursor: pointer
-                            &:focus
-                                outline: none
-                            em 
-                                color: #999999
-                        input,button
-                            &:focus
-                                outline: none
-                    .call
-                        margin-left: auto
-                        padding: 5px 20px
-                        background: #00a3e6
-                        color: #ffff
-                        font-weight: bold
+                        background: none
+                        padding: 
+                        color: #999999
+                        font-size: 16px   
+                        width: 100%
+                        font-style: italic
+                    button
+                        background: none
+                        border: none
+                        cursor: pointer
+                        &:focus
+                            outline: none
                         em 
-                            margin-right: 10px
-                    .language
-                        margin-left: 20px
-                        width: 70px
-                        text-align: center
-                        .lag-active
-                            position: relative
+                            color: #999999
+                    input,button
+                        &:focus
+                            outline: none
+                .call
+                    padding: 5px 20px
+                    background: #00a3e6
+                    color: #ffff
+                    font-weight: bold
+                    em 
+                        margin-right: 10px
+                .language
+                    margin-left: auto
+                    width: 70px
+                    text-align: center
+                    .lag-active
+                        position: relative
+                        span
+                            color: #666666
+                            font-weight: 600
+                        svg
+                            width: 10px
+                            margin-left: 10px
+                        &.active
                             span
-                                color: #333333
-                                font-weight: 600
                             svg
-                                width: 10px
-                                margin-left: 10px
-                            &.active
-                                span
-                                svg
-                                    transform: rotate(180deg)
-                                    transition: all .5s ease-in-out
-                        .list-lag
-                            width: 70px
-                            position: absolute
-                            bottom: -67px
+                                transform: rotate(180deg)
+                                transition: all .5s ease-in-out
+                    .list-lag
+                        width: 70px
+                        position: absolute
+                        bottom: -67px
+                        display: block
+                        background: #00a3e6
+                        z-index: 1
+                        pointer-events: none
+                        opacity: 0
+                        transition: all .5s ease-in-out
+                        li
+                            list-style: none
+                            text-align: center
+                            padding: 5px 0
+                            a 
+                                color: #ebebeb
+                                padding: 16px
+                                font-weight: 600
+                                text-transform: uppercase
+                                &:hover
+                                    color: #333333
+                        &.active 
                             display: block
-                            background: #00a3e6
-                            z-index: 1
-                            pointer-events: none
-                            opacity: 0
-                            transition: all .5s ease-in-out
-                            li
-                                list-style: none
-                                text-align: center
-                                padding: 5px 0
-                                a 
-                                    color: #ebebeb
-                                    padding: 16px
-                                    font-weight: 600
-                                    text-transform: uppercase
-                                    &:hover
-                                        color: #333333
-                            &.active 
-                                display: block
-                                max-height: auto 
-                                opacity: 1
-                                pointer-events: auto
+                            max-height: auto 
+                            opacity: 1
+                            pointer-events: auto
     .ac-home-menu
         padding: 0
         position: relative
@@ -145,14 +145,14 @@ header
                     padding: 0
                     li 
                         display: inline-block
-                        margin-right: 30px
+                        margin-right: 40px
                         padding: 20px 0
                         a 
                             color: #333333
                             text-transform: uppercase
                             font-weight: 600
                             transition: all 0.3s ease-in-out
-                        &:hover
+                        &:hover,&.active
                             a
                                 color: #00a3e6
                         &.has-dropdown
@@ -179,17 +179,26 @@ header
                                         a
                                             color: #00a3e6
                                             transition: all 0.35s ease
-                            &:hover 
-                                ul
-                                    border-top: 2px solid #00a3e6
-                                    opacity: 1
-                                    pointer-events: initial
+                        &:hover 
+                            ul
+                                border-top: 2px solid #00a3e6
+                                opacity: 1
+                                pointer-events: initial
                         &.has-mega
+                            &:after
+                                font: normal normal normal 24px/1 Material Design Icons
+                                content: '\f35d'
+                                font-size: 24px
+                                color: #333333
+                                position: absolute
+                                top: 50%
+                                transform: translateY(-50%)
+                                padding-left: 5px
                             .mega-wrap
                                 position: absolute
                                 top: 80px
                                 left: 0
-                                width: 100%
+                                width: 1200px
                                 padding: 20px
                                 background: #ffff
                                 border-top: 2px solid #00a3e6
@@ -200,8 +209,7 @@ header
                                 z-index: 9
                                 transition: all 0.5s ease-in-out
                                 .item 
-                                    flex-grow: 1
-                                    flex-basis: 0
+                                    margin-right: 30px
                                     .img 
                                         img 
                                             width: 100px
@@ -214,50 +222,82 @@ header
                                            &:hover
                                                color: #00a3e6 
                                                transition: all .3s ease-in-out
-                        &:hover 
-                            .mega-wrap
-                                border-top: 2px solid #00a3e6
-                                opacity: 1
-                                pointer-events: initial
-                                top: 65px
-                                
-                                               
+                        &.active,&:hover
+                            &.has-mega
+                                &:after
+                                    color: #00a3e6
+                                .mega-wrap
+                                    border-top: 2px solid #00a3e6
+                                    opacity: 1
+                                    pointer-events: initial
+                                    top: 65px
+                                    a
+                                    color: #333333
+                                .mega-back
+                                    display: none
+                            
             .toggle-menu
                 left: -300px
                 position: fixed
                 width: 300px
                 top: 130px
                 height: calc(100vh)
+                transition: .5s ease-in-out all
                 z-index: 99
                 background: #ffff
-                
                 &.active 
                     left: 0
+                    transition-delay: .1s
+                @media (max-width: 576px)
+                    top: 125px
             .toggle-button
-                // order: 1
-                width: 2rem
-                height: 2rem
                 display: none
                 justify-content: center
                 align-items: center
-                .hamburger--spring
-                    outline: none
-                    padding: 0
-                    .hamburger-box
-                        .hamburger-inner
-                            width: 30px
-                            &:after
-                                width: 30px
-                            &:before
-                                width: 30px
-                    @media (max-width: 768px)
-                        margin-left: 20px
-                        
+                z-index: 99
+                @media (max-width: 768px)
+                    padding-left: 20px
+                .button
+                    height: 2px
+                    width: 30px
+                    background: #00a3e6
+                    position: relative
+                    transition: all 0ms 300ms
+                    &:after
+                        content: ""
+                        position: absolute
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        bottom: 8px
+                        background: #00a3e6
+                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                    &:before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        width: 100%
+                        height: 100%
+                        top: 8px
+                        background: #00a3e6
+                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                &.active
+                    .button
+                        background: transparent
+                        &:before
+                            top: 0
+                            transform: rotate(45deg)
+                            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                        &:after
+                            bottom: 0
+                            transform: rotate(-45deg)
+                            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
         .list-hotro
             list-style: none   
             position: fixed
             right: 0
             top: 290px 
+            z-index: 98
             li 
                 display: flex
                 justify-content: center
@@ -270,41 +310,12 @@ header
                 margin-bottom: 5px
                 em 
                     color: #ffffff
-                // .button
-                //     height: 2px
-                //     width: 30px
-                //     background: #333
-                //     position: relative
-                //     transition: all 0ms 300ms
-                //     &:after
-                //         content: ""
-                //         position: absolute
-                //         left: 0
-                //         width: 100%
-                //         height: 100%
-                //         bottom: 8px
-                //         background: #333
-                //         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                //     &:before
-                //         content: ""
-                //         position: absolute
-                //         left: 0
-                //         width: 100%
-                //         height: 100%
-                //         top: 8px
-                //         background: #333
-                //         transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                // &.active
-                //     .button
-                //         background: transparent
-                //         &:before
-                //             top: 0
-                //             transform: rotate(45deg)
-                //             transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                //         &:after
-                //             bottom: 0
-                //             transform: rotate(-45deg)
-                //             transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                &:hover,&:active 
+                    background: rgba(110,112,113,0.89)
+                    transition: all .5s ease-in-out
+                    em 
+                        font-size: 28px
+                        transition: all 0.3s ease-in-out
 @media (max-width: 1025px)
     header
         .ac-home-menu
@@ -314,35 +325,71 @@ header
                 margin: 0
                 .main-menu
                     display: none
+                    ul 
+                        li 
                 .toggle-button
                     display: block
                 .toggle-menu
+                    overflow-y: auto
                     .hotro 
                         padding: 0
                         background: #00a3e6 
                         list-style: none 
                         li 
                             padding: 15px 0
-                            text-align: center
+                            text-align: left
+                            padding-left: 40px
                             a 
                                 color: #ebebeb
                                 font-weight: 600
                                 text-transform: uppercase
                     &.active
+                        display: block
+                        overflow-y: scroll
+                        
                         .main-menu
                             display: block
                             ul 
                                 li 
                                     display: block
-                                    text-align: center
+                                    text-align: left
+                                    padding-left: 40px
                                     border: .2px solid #ebebeb
                                     margin-right: 0
-                                    &.has-dropdown,&.has-mega
-                                        margin: 0
-                                        ul  
-                                            display: none
-                                            width: 150%
-                                             
+                                    &.has-mega
+                                        &:after
+                                            top: 30px
+                                            padding-left: 10px
+                                            &.active
+                                                transform: rotate(-90deg)
+                                                top: 26px
+                                        .mega-wrap
+                                            height: 100vh
+                                            flex-direction: column
+                                            width: 300px
+                                            left: -100%
+                                            transition: .5s ease-in-out all
+                                            top: 0
+                                            border: none
+                                            pointer-events: none
+                                            .mega-back
+                                                display: flex
+                                                margin-bottom: 20px
+                                                align-items: center
+                                                text-transform: uppercase
+                                                em
+                                                    font-size: 16px
+                                                    width: 30px
+                                                    text-align: center
+                                                    display: inline-block
+                                            .item
+                                                display: flex
+                                                justify-content: center   
+                                            &.active
+                                                left: 0
+                                                transition: all .3s ease-in-out
+                                                
+                                            
                 .searchbox
                     display: flex
                     border: none
@@ -355,7 +402,7 @@ header
                         border: none
                         background: none
                         padding: 
-                        color: #999999
+                        color: #f5f5f5
                         font-size: 16px   
                         width: 100%
                         font-style: italic
@@ -366,7 +413,7 @@ header
                         &:focus
                             outline: none
                         em 
-                            color: #999999
+                            color: #f5f5f5
                     input,button
                         &:focus
                             outline: none
@@ -376,24 +423,25 @@ header
                     color: #ebebeb
                     padding: 10px 0
                     text-align: center
-                    letter-spacing: 5px
                     em 
                         margin-right: 10px
                         transform: rotate(-30deg)
-                // .backdrop
-                //     position: fixed
-                //     width: 100%
-                //     opacity: 0
-                //     pointer-events: none
-                //     transition: all 0.5s ease-in-out
-                //     height: 100vh
-                //     top: 0
-                //     left: 0
-                //     z-index: 99
-                //     &.active
-                //         opacity: 1
-                //         pointer-events: initial
-                //         transition: all 0.5s ease-in-out
+                .toggle-menu
+                    z-index: 99
+                .backdrop
+                    position: fixed
+                    width: 100%
+                    height: calc(100vh-130px)
+                    opacity: 0
+                    pointer-events: none
+                    transition: .5s ease-in-out
+                    top: 130px
+                    left: 0
+                    z-index: 9
+                    background: rgba(0,0,0,.5)
+                    &.active
+                        opacity: 1
+                        pointer-events: initial
     .ac-home-menu
         .menu-wrapper
             margin: 0 20px

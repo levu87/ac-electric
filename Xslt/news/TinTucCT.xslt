@@ -16,16 +16,15 @@
             <div class="sidebox">
               <div class="title">
                 <h2>
-                  <xsl:value-of select="/NewsDetail/NewsOtherTitle"></xsl:value-of>
+                  Tin tức khác
                 </h2>
               </div>
               <xsl:apply-templates select="NewsDetail/NewsOther" mode="Other"></xsl:apply-templates>
             </div>
           </div>
         </div>
-        <div class="social-icon"><a class="fb" href=""><em class="fab fa-facebook-square"></em><span>Like </span></a>
-          <div class="pop"> </div><a class="tweet" href=""><em class="fab fa-twitter"></em><span>Tweet</span></a><a
-            class="li" href=""><em class="fab fa-linkedin"></em><span>Share</span></a>
+        <div class="social-icon">
+          <div id="shareInPopup"></div>
         </div>
       </div>
     </section>
@@ -34,6 +33,13 @@
     <xsl:if test="count(/NewsDetail/NewsOther)>0">
       <div class="item">
         <div class="img">
+          <a>
+            <xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="title">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
           <img>
             <xsl:attribute name="src">
               <xsl:value-of select="ImageUrl"></xsl:value-of>
@@ -42,13 +48,22 @@
               <xsl:value-of select="Title"></xsl:value-of>
             </xsl:attribute>
           </img>
+          </a>
         </div>
         <div class="caption">
+          <a>
+            <xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="title">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
           <h4>
             <xsl:value-of select="Title"></xsl:value-of>
             <xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
           </h4>
-          <date> <em class="far fa-clock"></em><span><xsl:value-of select="Title"></xsl:value-of></span></date>
+          </a>
+          <date> <em class="far fa-clock"></em><span><xsl:value-of select="CreatedDate"></xsl:value-of></span></date>
         </div>
       </div>
     </xsl:if>

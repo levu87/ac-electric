@@ -9,9 +9,6 @@
 		<div class="item">
 			<div class="accordion">
 				<div class="button">
-					<div class="icon">
-						<em class="lnr lnr-plus-circle"></em>
-					</div>
 				</div>
 				<h4>
 					<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>

@@ -1,5 +1,5 @@
 .lienhe 
-    background: #ebebeb
+    background-size: unset!important
     padding-top: 60px
     @media (max-width: 768px)
         padding: 40px 0
@@ -9,40 +9,70 @@
         justify-content: center
         text-align: center
         align-items: center
+        font-weight: 600
         h2 
             font-size: 36px
             text-transform: uppercase
             color: #333333
         p 
-            max-width: 500px
+            max-width: 730px
+            color: #666666
     .chitiet 
         display: flex
         justify-content: space-around
         text-align: center
+        p 
+            color: #666666
+            strong
+                color: #333333
         em 
             font-size: 30px
             color: #00a3e6
+@media (max-width: 768px)
+    .lienhe
+        .chitiet
+            display: flex
+            flex-wrap: wrap
+            .call
+                flex: 0 0 100%
+                max-width: 100%
+                padding-bottom: 1rem
+            .diachi
+                flex: 0 0 100%
+                max-width: 100%
+                padding-bottom: 1rem
+            .email
+                flex: 0 0 100%
+                max-width: 100%
+                padding-bottom: 1rem
+
+
 .form 
     padding-top: 60px
     .left 
+        padding: 0
+        margin-bottom: -3px
         iframe 
             width: 100%
-            height: 730px
+            height: 604px
     .right
         padding: 60px 30px
         background: #ffff
+            
         p 
             font-size: 26px 
             color: #333333
             font-weight: 600
             padding-bottom: 40px
+            @media (max-width: 768px)
+                text-align: center
         .wrap-form
             max-width: 90%
             input[type="text"],select
                 width: 100%
-                border: none
+                border: 1px solid #ebebeb
                 border-radius: none
-                background: #ebebeb
+                background: #fbfbfb
                 margin-bottom: 10px
                 height: 40px
                 padding: 5px 10px
@@ -50,9 +80,9 @@
                     outline: none
             textarea 
                 width: 100%
-                border: none
+                border: 1px solid #ebebeb
                 border-radius: none
-                background: #ebebeb
+                background: #fbfbfb
                 margin-bottom: 20px
                 padding: 5px 10px
                 &:focus
@@ -62,6 +92,8 @@
                 font-size: 16px
                 font-weight: 600
                 margin-bottom: 10px
+            .fa-exclamation-triangle
+                color: red
             input[type="submit"]
                 padding: 5px 40px
                 border: none
@@ -69,5 +101,12 @@
                 color: #ffff
                 &:focus
                     outline: none
+        @media (max-width: 768px)
+            .wrap-form
+                max-width: 100%
+                padding-left: 1rem
+                padding-right: 1rem
+                .first
+                    padding: 0
 
                 

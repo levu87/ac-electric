@@ -10,31 +10,37 @@
             justify-content: center
             .item
                 position: relative
-                width: 143px
-                height: 143px
+                width: 140px
+                height: 140px
                 border-radius: 50%
                 border:  16px solid #0799d9
                 border-right: 15px solid #00a3e6
-                span
+                h4
                     position: absolute
                     right: -25%
                     top: 50%
                     transform: translateY(-50%)
-                    font-size: 50px
-                    font-weight: 600
+                    font-size: 2.8em
+                    font-weight: bold
                     color: #ffff
+                    span 
+                        position: absolute
+                        top: -12px
+                        right: -25px
+                        font-size: 40px
+                        font-weight: bold
             p 
                 margin-top: 15px
                 text-align: center
                 color: #ffff
+                text-overflow: ellipsis
+                overflow: hidden
+                height: 50px
+                -webkit-line-clamp: 2
         @media (max-width: 1025px)
             .circle
-                flex: 0 0 50%
-                max-width: 50%
-                margin-bottom: 20px
-@media (max-width: 768px)
-    .kinhnghiem
-        padding: 40px 0
+                padding: 25px 0
+
 
         
         

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes" />
-
 	<xsl:template match="/">
 		<xsl:apply-templates select="ZoneList"></xsl:apply-templates>
 	</xsl:template>
 	<xsl:template match="ZoneList">
-
-		<section class="duan-tc" setBackground="./img/duan-3.png">
+		<section class="duan-tc" setBackground="/Data/Sites/1/media/duan-3.png">
 			<div class="container">
 				<div class="danhmuc-top">
 					<div class="title">

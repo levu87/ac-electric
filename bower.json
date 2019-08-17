@@ -24,6 +24,7 @@
     "linearicons": "1.0.1",
     "lazysizes": "5.1.0",
     "paginationjs": "^2.1.4",
-    "owl.carousel": "^2.3.4"
+    "owl.carousel": "^2.3.4",
+    "aos": "^2.3.4"
   }
 }

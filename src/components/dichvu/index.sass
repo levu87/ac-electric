@@ -76,7 +76,7 @@
 .giaiphap
     width: 100%
     height: auto
-    padding: 30px
+    padding: 3.5rem 0
     .giaiphap-title
         h1
             font-size: 36px
@@ -84,6 +84,7 @@
             text-transform: uppercase
             text-align: center
             padding-bottom: 20px
+            font-weight: 600
     @media (max-width: 576px)
         .giaiphap-title
             h1 
@@ -98,7 +99,7 @@
                     width: 100%
                 figcaption
                     width: 100%
-                    height: 227px
+                    height: 240px
                     margin-top: -45px
                     position: relative
                     box-shadow: 0 0 20px #ebebeb
@@ -106,14 +107,21 @@
                         display: flex
                         justify-content: flex-end
                         h5
-                            padding: 10px
+                            display: flex
+                            justify-content: center
+                            align-items: center
                             color: #ffff
                             font-size: 18px
                             font-weight: 600
+                            height: 50px
+
                             text-transform: uppercase
                             text-align: center
                             background: #00a3e6
                             width: calc(100% - 38px)
+                        @media (max-width: 1200px)
+                            h5 
+                                font-size: 14px
                     .icon
                         position: absolute
                         width: 85px
@@ -129,9 +137,15 @@
                             z-index: 4
                     p
                         position: relative
-                        padding: 25px
+                        padding: 35px 25px
                         color: #333333
                         z-index: 3
+                        -webkit-line-clamp: 3
+                        color: #333
+                        text-overflow: ellipsis
+                        overflow: hidden
+                        -webkit-box-orient: vertical
+                        max-height: 110px
                     a
                         display: block
                         text-align: center
@@ -139,7 +153,7 @@
                         width: 100%
                         background: #ffff
                         color: #00a3e6
-                        padding: 5px
+                        padding: 10px 0
                         position: absolute
                         bottom: 0
                         text-transform: uppercase

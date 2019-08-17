@@ -38,9 +38,7 @@
                         <p><xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of></p>
                     </figcaption>
                     </a>
-                    <div class="button-more">
-                            <button>xem thêm<em class="lnr lnr-arrow-right"></em></button>
-                        </div>
+                    
                 </figure>
             </div>
         </div>

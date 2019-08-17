@@ -19,7 +19,7 @@
 		</section>
 	</xsl:template>
 	<xsl:template match="Zone">
-		<div class="col-lg-4 col-sm-12">
+		<div class="col-lg-4 col-sm-12" data-aos="fade-up">
 			<div class="item">
 				<figure>
 					<a>

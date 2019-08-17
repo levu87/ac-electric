@@ -4,12 +4,13 @@
 
 	<xsl:template match="/">
 
-		<section class="congtrinh-dautu" setBackground="/Data/Sites/1/media/banner-dichvu.png">
+		<section class="congtrinh-dautu" setBackground="/Data/Sites/1/media/congtrinh-bg.png">
 			<div class="container">
 				<div class="wrap">
 					<div class="title">
-						<h2><xsl:value-of disable-output-escaping="yes" select="/ZoneList/ModuleTitle"></xsl:value-of></h2>
-						
+						<h2>
+							<xsl:value-of disable-output-escaping="yes" select="/ZoneList/ModuleTitle"></xsl:value-of>
+						</h2>
 					</div>
 					<div class="row">
 						<xsl:apply-templates select="/ZoneList/Zone"></xsl:apply-templates>
@@ -19,6 +20,10 @@
 		</section>
 	</xsl:template>
 	<xsl:template match="Zone">
+		<xsl:apply-templates select="Zone" mode="Child"></xsl:apply-templates>
+	</xsl:template>
+	<xsl:template match="Zone" mode="Child">
+
 		<xsl:if test="position() =1">
 
 
@@ -49,14 +54,23 @@
 		<div class="col-6 circle">
 			<div class="item">
 				<div class="img">
-					<img>
-						<xsl:attribute name="src">
-							<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+					<a>
+						<xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
 						</xsl:attribute>
-						<xsl:attribute name="alt">
+						<xsl:attribute name="title">
 							<xsl:value-of select="Title"></xsl:value-of>
 						</xsl:attribute>
-					</img>
+						<img>
+							<xsl:attribute name="src">
+								<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="alt">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+						</img>
+					</a>
+
 				</div>
 			</div>
 			<p>
@@ -76,14 +90,22 @@
 		<div class="col-12 circle">
 			<div class="item">
 				<div class="img">
-					<img>
-						<xsl:attribute name="src">
-							<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+					<a>
+						<xsl:attribute name="href">
+							<xsl:value-of select="Url"></xsl:value-of>
 						</xsl:attribute>
-						<xsl:attribute name="alt">
+						<xsl:attribute name="title">
 							<xsl:value-of select="Title"></xsl:value-of>
 						</xsl:attribute>
-					</img>
+						<img>
+							<xsl:attribute name="src">
+								<xsl:value-of select="ThumbnailUrl"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="alt">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+						</img>
+					</a>
 				</div>
 			</div>
 			<p>

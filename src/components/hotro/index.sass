@@ -7,20 +7,23 @@
             text-align: center
             color: #00a3e6 
             text-transform: uppercase
+            font-weight: 600
     .form
         background: #f5f5f5
         padding: 25px
         width: 100%
-        height: auto
+        height: 450px
         h2 
-            font-size: 16px 
+            font-size: 24px 
             text-transform: uppercase
             color: #00a3e6
             text-align: center
+            font-weight: 400
         .form-group
             input[type="text"]
                 width: 100%
                 border: 1px solid #e1e1e1
+                background: #ffffff
                 padding: 5px 15px
                 outline: none
                 margin-bottom: 15px
@@ -30,6 +33,7 @@
                 width: 100%
                 border: 1px solid #e1e1e1
                 padding: 5px 15px
+                background: #ffffff
                 outline: none
                 margin-bottom: 15px
                 &:focus
@@ -56,51 +60,47 @@
                 width: 100%
                 height: 45px 
                 .button
+                    position: relative
                     width: 45px 
                     background: #00a3e6
                     height: 45px
-                    display: flex
-                    justify-content: center
-                    align-items: center
                     margin-right: 20px
-                    em 
-                        color: #ffffff  
+                    &:after
+                        font: normal normal normal 24px/1 Material Design Icons
+                        content: '\f419'
+                        font-size: 20px
+                        color: #ffffff
+                        position: absolute
+                        top: 50%
+                        left: 13px
+                        transform: translateY(-50%)
             .accordion-content
                 background-color: white
-                display: none
-                overflow: hidden
                 transition: all 0.3s ease-in-out
+                display: none
                 p 
                     margin-left: 65px
                     padding: 15px 0
+                    padding-right: 15px
             &.active 
                 border: 1px solid #00a3e6
                 .accordion
                     .button
                         background: none
+                        position: relative
                         &:after
-                            content: ''
+                            font: normal normal normal 20px/1 Material Design Icons
+                            content: '\f377'
+                            font-size: 24px
+                            color: #00a3e6
                             position: absolute
-                            width: 16px
-                            height: 16px
-                            border: 1px solid #00a3e6
-                            border-radius: 50%
-                            font-family: 'Material Icons'
-                            display: block
-                        &:before
-                            position: absolute
-                            content: ''
-                            width: 10px
-                            height: 1px
-                            background: #00a3e6
-                            font-family: 'Material Icons'
-                            display: block
+                            top: 50%
+                            left: 13px
+                            transform: translateY(-50%)
                 .accordion-content
                     display: block
+                    transform: all 0.3s ease-in-out
                     overflow: none
-               
-
-
 @media (max-width: 1025px)
     .hotro
         .form 

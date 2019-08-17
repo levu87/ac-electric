@@ -27,17 +27,19 @@
                     height: 100px
             .caption
                 padding: 0 10px
-                text-overflow: ellipsis
-                overflow: hidden
-                white-space: nowrap
                 &:hover
                     white-space: normal
                     text-overflow: none
                     transition: all .3s ease-in-out
-                h4
+                a
                     font-size: 16px 
                     color: #333333
-                    font-weight: 600
+                    h4
+                        font-weight: 600
+                        -webkit-line-clamp: 2
+                        overflow: hidden
+                        text-overflow: ellipsis
+                        max-height: 50px
                 date 
                     padding: 20px 0
                     font-size: 16px 
@@ -49,6 +51,7 @@
                         margin-right: 5px
     .social-icon
         display: flex
+        padding-top: 25px
         .fb 
             position: relative
             width: 60px
@@ -63,28 +66,29 @@
                 font-weight: 600
                 font-size: 12px
             em 
+                margin-right: 5px
                 color: #ffff
-        // .pop
-        //     position: absolute
-        //     width: 20px
-        //     height: 20px
-        //     border: .5px solid gray
-        //     right: -30px
-        //     position: relative
-        //     z-index: 1
-        //     background: #ebebeb
-        //     &:after
-        //         content: ''
-        //         display: block
-        //         width: 10px
-        //         height: 10px
-        //         position: absolute
-        //         left: -5px
-        //         top: 5px
-        //         background: red
-        //         transform: rotate(45deg)
-        //         background: #ebebeb
-        //         border: 0.5px solid gray
+            .pop
+            position: absolute
+            width: 20px
+            height: 20px
+            border: .5px solid gray
+            right: -30px
+            position: relative
+            z-index: 1
+            background: #ebebeb
+            &:after
+                content: ''
+                display: block
+                width: 10px
+                height: 10px
+                position: absolute
+                left: -5px
+                top: 5px
+                background: red
+                transform: rotate(45deg)
+                background: #ebebeb
+                border: 0.5px solid gray
         .tweet
             width: 60px
             height: 20px
@@ -100,6 +104,7 @@
                 font-size: 12px
             em 
                 color: #00a3e6
+                margin-right: 5px
         .li
             width: 60px
             height: 20px
@@ -115,5 +120,9 @@
                 font-size: 12px
             em 
                 color: #00a3e6
+                margin-right: 5px
         a 
             margin-right: 5px
+.canhcam.news-detail-page
+    .pagination
+        display: none

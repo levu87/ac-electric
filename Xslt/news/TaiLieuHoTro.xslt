@@ -31,9 +31,21 @@
                     <xsl:value-of select="Title"></xsl:value-of>
                 </a>
                 <div class="bottom"> 
-                    <p> 
+                        <p> 
                             <time> <em class="date far fa-clock"></em><span><xsl:value-of disable-output-escaping="yes" select="CreatedDate"></xsl:value-of></span></time>
-                        </p><em class="fas fa-cloud-download-alt"></em>
+                        </p>
+                        <a class="download">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="FileUrl"></xsl:value-of>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="Title"></xsl:value-of>
+                        </xsl:attribute>
+                        <em class="fas fa-cloud-download-alt" ></em>
+                        </a>
+                        
+                       
+                        
                 </div>
             </div>
         </div> 

@@ -7,7 +7,7 @@
 	</xsl:template>
 	<xsl:template match="ZoneList">
 
-		<section class="duan-tc" setBackground="./img/duan-3.png">
+		<section class="duan-tc" setBackground="/Data/Sites/1/media/duan-3.png">
 			<div class="container">
 				<div class="danhmuc-top">
 					<div class="title">
@@ -37,6 +37,16 @@
 				</xsl:attribute>
 			</xsl:if>
 			<a class="link" id="current" href="javascript:void(0)">
+				<xsl:if test="position() =1">
+				<xsl:attribute name="class">
+					<xsl:text>link current</xsl:text>
+				</xsl:attribute>
+				</xsl:if>
+				<xsl:if test="IsActive='true'">
+					<xsl:attribute name="class">
+						<xsl:text>link current</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
 				<xsl:attribute name="data-tab">
 					<xsl:text>tab-</xsl:text>
 					<xsl:value-of select="position()"></xsl:value-of>

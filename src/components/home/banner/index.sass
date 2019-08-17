@@ -2,29 +2,47 @@
     .swiper-container
         position: relative
         .swiper-wrapper
+            position: relative
             .swiper-slide 
                 .item 
                     img 
+                        height: 100%
                         width: 100%
+                        object-fit: cover
+                    // &:before 
+                    //     content: ''
+                    //     position: absolute 
+                    //     width: 100%
+                    //     height: 100px 
+                    //     bottom: 0 
+                    //     left: 0
                     .text-slider
-                        position: absolute 
-                        bottom: 30px
-                        left: 50%
-                        transform: translateX(-50%)
+                        padding: 15px
+                        width: 100%
+                        position: absolute
+                        bottom: 60px
+                        left: 0
+                        text-align: center
                         p 
-                            font-size: 36px
+                            font-size: 40px
                             text-align: center
                             color: #ffff
-                        @media (max-width: 768px)
+                            
+                @media (max-width: 768px)
+                    .item
+                        img
+                            height: 467px
+                        .text-slider 
                             p 
                                 font-size: 30px
-                        @media (max-width: 576px)
-                            p 
-                                font-size: 25px
-                                line-height: 25px
-            .swiper-pagination
-                .swiper-pagination-bullet
-                    background: #ffff
-         
+        .home-swiper-pagination
+            position: absolute
+            bottom: 0
+            left: 0
+            z-index: 99
+            padding: 30px
+            display: flex
+            justify-content: center
+            
 
                 

@@ -7,6 +7,7 @@
             font-size: 36px
             color: #333333
             text-transform: uppercase
+            font-weight: 600
     .danhmuc 
         display: flex
         padding: 20px 0
@@ -16,16 +17,24 @@
             display: flex 
             text-align: center 
             align-items: center
-            margin: 10px
+            margin: 5px
             width: 200px
             height: 40px
             justify-content: center
             border: 1px solid #00a3e6
             transition: all 0.3s ease-in-out
-            a 
+            .link
+                display: flex 
+                text-align: center 
+                align-items: center
                 text-transform: uppercase
                 color: #00a3e6
-                padding: 20px 0
+                justify-content: center
+                width: 200px
+                height: 40px
+                &.current
+                    background: #00a3e6
+                    color: #ebebeb
             &:hover
                 background: #00a3e6
                 a 
@@ -50,7 +59,7 @@
             text-align: center
             padding-top: 20px
             a
-                padding: 15px 60px
+                padding: .8rem 4.6rem
                 text-align: center
                 background: #f7d309
                 text-transform: uppercase

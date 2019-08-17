@@ -6,26 +6,48 @@
         position: relative
         width: 100%
         padding: 50px 0
+        overflow: unset
+        @media (max-width: 1025px)
+            overflow: hidden
         .swiper-wrapper
             .swiper-slide
+                height: 450px
+                width: 720px
                 .item 
+                    width: auto
                     height: 450px
-                    width: 820px
                     img 
                         width: 100%
                         height: 100%
                         object-fit: cover
+            .swiper-slide-prev
+                position: relative
+                &:before
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    background: #000000a8
+            .swiper-slide-next
+                position: relative
+                &:before
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    background: #000000a8
         .control
             position: absolute
             left: 50%
             transform: translateX(-50%)
-            top: 50%
-            transform: translatey(-50px)
+            top: 275px
             z-index: 1
             display: flex
             justify-content: flex-start
             flex-direction: row-reverse
-            width: 830px
+            width: 810px
             .swiper-btn-next
                 margin-left: auto
                 outline: none
@@ -37,10 +59,13 @@
                 em 
                     font-size: 30px
                     color: #ebebeb
-        @media (max-width: 576px)
+        @media (max-width: 1200px)
+            .control
+                width: 710px
+        @media (max-width: 1025px)
             .control
                 width: 70px
-                bottom: 10px
+                top: 80%
 .box-text
     padding: 60px
     .tt

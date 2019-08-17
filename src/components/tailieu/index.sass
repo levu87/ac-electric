@@ -1,36 +1,48 @@
 .tailieuhotro 
-    padding: 60px
+    padding: 60px 0 20px 0!important
     @media (max-width: 768px)
-        padding: 40px 0
+        padding: 40px 0 15px 0
     .title 
         h2 
             font-size: 36px 
             text-transform: uppercase
             color: #00a3e6 
             text-align: center
+            font-weight: 600px
     .content
         .item
             width: 100%
-            border: 1px solid gray
-            padding: 10px
+            border: 1px solid #e1e1e1!important
+            padding: 20px
             margin: 15px
             a 
                 margin-bottom: 5px
                 font-size: 15px
                 font-weight: 600
                 color: #333333
-
-            &:hover
-                border: 1px solid #00a3e6
+                -webkit-line-clamp: 2
+                font-weight: 600
+                max-height: 40px
+                text-overflow: ellipsis
+                overflow: hidden
+                display: block
+                padding-bottom: 1rem
+            &:hover           
+                border: 1px solid #00a3e6!important
                 a 
                     color: #00a3e6
             .bottom 
                 display: flex
-                em 
+                align-items: center
+                .download
                     margin-left: auto
-                    font-size: 30px
-                    color: #00a3e6
-                a
+                    display: block
+                    padding: 0
+                    em 
+                        
+                        font-size: 20px!important
+                        color: #00a3e6
+                p
                     font-size: 15px
                     display: flex
                     align-items: center

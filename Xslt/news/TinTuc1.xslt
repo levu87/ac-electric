@@ -12,10 +12,10 @@
                             <xsl:value-of select="/NewsList/ZoneTitle"></xsl:value-of>
                         </h2>
                     </div>
-                    <div class="box-tintuc">
+                    <div class="box-tintuc" data-aos="fade-right">
                         <div class="row">
                             <xsl:apply-templates select="/NewsList/News" mode='TopItem'></xsl:apply-templates>
-                            <div class="col-md-6 small">
+                            <div class="col-lg-6 col-12 small">
                                 <div class="row">
                                     <xsl:apply-templates select="/NewsList/News" mode="PartItem"></xsl:apply-templates>
                                 </div>
@@ -33,7 +33,7 @@
     </xsl:template>
     <xsl:template match="News" mode='TopItem'>
         <xsl:if test="position() = 1">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-12">
                 <div class="big">
                     <img>
                     <xsl:attribute name="src">
@@ -45,13 +45,13 @@
                             <xsl:value-of select="CreatedDate"></xsl:value-of>
                         </date>
                         <a>
-                            <h2>
-                                <xsl:attribute name="href">
+                            <xsl:attribute name="href">
                                     <xsl:value-of select="Url"></xsl:value-of>
                                 </xsl:attribute>
                                 <xsl:attribute name="target">
                                     <xsl:value-of select="Target"></xsl:value-of>
                                 </xsl:attribute>
+                            <h2>
                                 <xsl:attribute name="title">
                                     <xsl:value-of select="Title"></xsl:value-of>
                                 </xsl:attribute>
@@ -65,7 +65,7 @@
     </xsl:template>
     <xsl:template match="News" mode='PartItem'>
         <xsl:if test="position() = 2 or position() = 3">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-12">
                 <div class="item">
                     <figure>
                         <div class="img">
@@ -102,7 +102,7 @@
     </xsl:template>
     <xsl:template match="News" mode='List'>
         <xsl:if test="position() &gt; 3">
-            <div class="col-md-3">
+            <div class="col-lg-3 col-6">
                 <div class="item">
                     <figure>
                         <div class="img">

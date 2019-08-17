@@ -8,6 +8,7 @@
             color: #00a3e6 
             text-transform: uppercase
             text-align: center
+            font-weight: 600
     .danhmuc 
         display: flex
         padding: 20px 0
@@ -17,7 +18,7 @@
             display: flex 
             text-align: center 
             align-items: center
-            margin: 10px
+            margin: 5px
             width: 200px
             height: 40px
             justify-content: center
@@ -29,8 +30,12 @@
             &:hover
                 background: #00a3e6
                 color: #ebebeb
+            &.current
+                background: #00a3e6
+                color: #ebebeb
     .duan
         .item 
+            padding-bottom: 1.1rem
             figure
                 .figure-image
                     display: block
@@ -59,8 +64,12 @@
                             text-transform: uppercase
                             color: #333333
                 &:hover
-                    h3 
+                    a
                         color: #00a3e6
+                        transition: all .3s ease-in-out
+    @media (max-width: 1025px)
+        .duan
+            padding: 0 20px
     .pagination
             text-align: center
             display: flex
