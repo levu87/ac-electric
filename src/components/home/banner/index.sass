@@ -5,6 +5,9 @@
             position: relative
             .swiper-slide 
                 .item 
+                    width: auto 
+                    height: calc(100vh - 130px)
+                    background: #333333
                     img 
                         height: 100%
                         width: 100%
@@ -31,7 +34,7 @@
                 @media (max-width: 768px)
                     .item
                         img
-                            height: 467px
+                            
                         .text-slider 
                             p 
                                 font-size: 30px
@@ -43,6 +46,18 @@
             padding: 30px
             display: flex
             justify-content: center
+            span
+                width: 10px
+                height: 10px
+                border: none
+                opacity: 1
+                border-radius: 50px
+                margin: 0 5px
+                background: #ffffff
+                position: static
+                &.swiper-pagination-bullet-active
+                    background: #00a3e6
+
             
 
                 

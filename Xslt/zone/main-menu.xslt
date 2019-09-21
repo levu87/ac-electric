@@ -23,8 +23,14 @@
                     </div>
                     <xsl:apply-templates select="Zone" mode='mega'></xsl:apply-templates>
                 </div>
+                <em class="mdi mdi-menu-down mega-show"></em>
             </xsl:if>
             <a>
+                <xsl:if test="IsActive='true'">
+                <xsl:attribute name="class">
+                    <xsl:text disable-output-escaping="yes">active</xsl:text>
+                </xsl:attribute>
+                </xsl:if>
                 <xsl:attribute name="href">
                     <xsl:value-of select="Url"></xsl:value-of>
                 </xsl:attribute>

@@ -1,5 +1,7 @@
 .home-duan-slider
     padding: 60px 0
+    @media (max-width: 768px)
+        padding: 40px 0
     .title
         h1 
             font-size: 36px
@@ -7,10 +9,10 @@
             text-transform: uppercase
             color: #00a3e6
             font-weight: 600
-    @media (max-width: 576px)
-        .title
-            h1 
-                font-size: 30px
+            padding-bottom: 20px
+            @media (max-width: 1025px)
+                font-size: 26px
+            
     .swiper-container
         position: relative
         .swiper-wrapper

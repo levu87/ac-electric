@@ -1,5 +1,6 @@
 .duan-tc
     padding: 60px 0
+    background-size: unset!important
     .danhmuc-top
     .title
         text-align: center
@@ -8,11 +9,22 @@
             color: #333333
             text-transform: uppercase
             font-weight: 600
+            @media (max-width: 1025px)
+                font-size: 26px
+            
     .danhmuc 
         display: flex
         padding: 20px 0
-        flex-wrap: wrap
+        flex-wrap: nowrap
+        overflow-x: auto
+        margin-bottom: 1rem
         justify-content: center
+        &::-webkit-scrollbar
+            height: 2px
+        &::-webkit-scrollbar-track
+            background: #eee
+        &::-webkit-scrollbar-thumb
+            background: #00a3e6
         .button
             display: flex 
             text-align: center 
@@ -39,7 +51,9 @@
                 background: #00a3e6
                 a 
                     color: #ebebeb
-
+    @media (max-width: 1200px)
+        .danhmuc
+            justify-content: space-between
     .tab-content
         display: none
         .item

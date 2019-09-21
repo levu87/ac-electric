@@ -8,6 +8,9 @@
             color: #00a3e6 
             text-transform: uppercase
             font-weight: 600
+            @media (max-width: 1025px)
+                font-size: 26px
+            
     .form
         background: #f5f5f5
         padding: 25px
@@ -46,6 +49,8 @@
                 background: #00a3e6
                 color: #ffff
                 border: 1px solid #e1e1e1
+            .fa.fa-exclamation-triangle
+                color: red
             .frm-btn
                 width: 100%
             label 
@@ -74,6 +79,8 @@
                         top: 50%
                         left: 13px
                         transform: translateY(-50%)
+                h4 
+                    max-width: 80%
             .accordion-content
                 background-color: white
                 transition: all 0.3s ease-in-out
@@ -91,7 +98,7 @@
                         &:after
                             font: normal normal normal 20px/1 Material Design Icons
                             content: '\f377'
-                            font-size: 24px
+                            font-size: 20px
                             color: #00a3e6
                             position: absolute
                             top: 50%
@@ -110,6 +117,7 @@
             flex: 0 0 100%
             max-width: 100% 
             padding: 30px 0 
+            margin-top: 1rem
 @media (max-width: 768px)
     .hotro
         padding: 40px 0

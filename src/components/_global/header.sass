@@ -7,6 +7,8 @@ header
         box-shadow: 0 0 8px rgba(0,0,0,.15)
     .top-head
         position: relative
+        .top-wrapper
+            padding: 0 20px
         &:before
             width: 100%
             height: 1px
@@ -19,22 +21,17 @@ header
             display: flex
             justify-content: space-between
             align-items: center
-            padding: 10px 0
+            padding: 10px 20px
             .box-l
                 .logo-ac
                     img 
                         width: 150px
-                @media (max-width: 768px)
-                    .logo-ac 
-                        margin-left: 20px
-                @media (max-width: 576px)
-                    .logo-ac 
-                        img 
-                            width: 130px
-                
+                        @media (max-width: 1025px)
+                            width: 125px
             .box-r
                 display: flex
                 align-items: center
+                margin-left: auto
                 .hotro
                     list-style: none
                     padding: 0
@@ -45,8 +42,9 @@ header
                             color: #333333
                             text-transform: uppercase
                             font-weight: 600
+                            font-size: 15px
                             transition: all 0.3s ease-in-out
-                            &:hover,&:active
+                            &:hover,&.active
                                 color: #00a3e6 
                         &.active
                             a 
@@ -85,7 +83,6 @@ header
                     em 
                         margin-right: 10px
                 .language
-                    margin-left: auto
                     width: 70px
                     text-align: center
                     .lag-active
@@ -93,6 +90,7 @@ header
                         span
                             color: #666666
                             font-weight: 600
+                            font-size: 15px
                         svg
                             width: 10px
                             margin-left: 10px
@@ -107,7 +105,7 @@ header
                         bottom: -67px
                         display: block
                         background: #00a3e6
-                        z-index: 1
+                        z-index: 999
                         pointer-events: none
                         opacity: 0
                         transition: all .5s ease-in-out
@@ -119,6 +117,7 @@ header
                                 color: #ebebeb
                                 padding: 16px
                                 font-weight: 600
+                                font-size: 15px
                                 text-transform: uppercase
                                 &:hover
                                     color: #333333
@@ -127,18 +126,72 @@ header
                             max-height: auto 
                             opacity: 1
                             pointer-events: auto
+                .toggle-button
+                    display: none
+                    justify-content: center
+                    align-items: center
+                    z-index: 99
+                    .button
+                        height: 2px
+                        width: 30px
+                        background: #00a3e6
+                        position: relative
+                        transition: all 0ms 300ms
+                        &:after
+                            content: ""
+                            position: absolute
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            bottom: 8px
+                            background: #00a3e6
+                            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                        &:before
+                            content: ""
+                            position: absolute
+                            left: 0
+                            width: 100%
+                            height: 100%
+                            top: 8px
+                            background: #00a3e6
+                            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                    &.active
+                        .button
+                            background: transparent
+                            &:before
+                                top: 0
+                                transform: rotate(45deg)
+                                transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                            &:after
+                                bottom: 0
+                                transform: rotate(-45deg)
+                                transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+                .toggle-menu
+                    left: -300px
+                    position: fixed
+                    width: 300px
+                    top: 57.97px
+                    height: calc(100% - 57.97px)
+
+                    transition: .5s ease-in-out all
+                    z-index: 99
+                    background: #ffff
+                    &.active 
+                        left: 0
+                        transition-delay: .1s
     .ac-home-menu
         padding: 0
         position: relative
         .menu-wrapper
             position: relative
-            padding: 0
+            padding: 0 20px
             height: 65px
             display: flex
             align-items: center
             justify-content: flex-start
             .main-menu
                 position: relative
+                width: 100%
                 ul
                     list-style: none
                     text-align: left
@@ -151,39 +204,40 @@ header
                             color: #333333
                             text-transform: uppercase
                             font-weight: 600
+                            font-size: 15px
                             transition: all 0.3s ease-in-out
                         &:hover,&.active
                             a
                                 color: #00a3e6
-                        &.has-dropdown
-                            position: relative
-                            ul 
-                                opacity: 0
-                                pointer-events: none
-                                width: 200px
-                                padding: 0 
-                                background: #ffff
-                                position: absolute
-                                top: 100%
-                                left: 85px
-                                transform: translateX(-50%)
-                                z-index: 99
-                                transition: .5s ease-in-out all
-                                li 
-                                    padding: 10px
-                                    width: 100%
-                                    a
-                                        color: #333333
-                                        font-size: 12px
-                                    &:hover
-                                        a
-                                            color: #00a3e6
-                                            transition: all 0.35s ease
-                        &:hover 
-                            ul
-                                border-top: 2px solid #00a3e6
-                                opacity: 1
-                                pointer-events: initial
+                        // &.has-dropdown
+                        //     position: relative
+                        //     ul 
+                        //         opacity: 0
+                        //         pointer-events: none
+                        //         width: 200px
+                        //         padding: 0 
+                        //         background: #ffff
+                        //         position: absolute
+                        //         top: 100%
+                        //         left: 85px
+                        //         transform: translateX(-50%)
+                        //         z-index: 99
+                        //         transition: .5s ease-in-out all
+                        //         li 
+                        //             padding: 10px
+                        //             width: 100%
+                        //             a
+                        //                 color: #333333
+                        //                 font-size: 12px
+                        //             &:hover
+                        //                 a
+                        //                     color: #00a3e6
+                        //                     transition: all 0.35s ease
+                        // &:hover 
+                        //     ul
+                        //         border-top: 2px solid #00a3e6
+                        //         opacity: 1
+                        //         pointer-events: initial
                         &.has-mega
                             &:after
                                 font: normal normal normal 24px/1 Material Design Icons
@@ -196,32 +250,51 @@ header
                                 padding-left: 5px
                             .mega-wrap
                                 position: absolute
+                                height: auto
                                 top: 80px
                                 left: 0
                                 width: 1200px
-                                padding: 20px
+                                padding: 30px 20px 
                                 background: #ffff
-                                border-top: 2px solid #00a3e6
+                                border-top: 2px solid #ebebeb
                                 z-index: 9
                                 display: flex
+                                flex: 0 0 100%
+                                max-width: 100%
+                                margin-right: -10px
+                                margin-left: -10px
+                                flex-wrap: wrap
                                 opacity: 0
                                 pointer-events: none
                                 z-index: 9
                                 transition: all 0.5s ease-in-out
+                                .mega-back
+                                    display: none
                                 .item 
-                                    margin-right: 30px
+                                    flex: 0 0 25%
+                                    max-width: 25%
+                                    padding: 5px
                                     .img 
+                                        width: auto
+                                        height: 200px
                                         img 
-                                            width: 100px
-                                            height: auto
+                                            width: 100%
+                                            height: 100%
+                                            object-fit: scale-down
                                     .title 
                                         padding-top: 10px
+                                        text-align: center
                                         h4 
                                            font-size: 12px
                                            color: #333333
                                            &:hover
                                                color: #00a3e6 
                                                transition: all .3s ease-in-out
+                            a
+                                &:hover,&.active
+                                    color: #00a3e6
+                            .mega-show
+                                display: none
                         &.active,&:hover
                             &.has-mega
                                 &:after
@@ -230,68 +303,9 @@ header
                                     border-top: 2px solid #00a3e6
                                     opacity: 1
                                     pointer-events: initial
-                                    top: 65px
+                                    top: 57.97px
                                     a
                                     color: #333333
-                                .mega-back
-                                    display: none
-                            
-            .toggle-menu
-                left: -300px
-                position: fixed
-                width: 300px
-                top: 130px
-                height: calc(100vh)
-                transition: .5s ease-in-out all
-                z-index: 99
-                background: #ffff
-                &.active 
-                    left: 0
-                    transition-delay: .1s
-                @media (max-width: 576px)
-                    top: 125px
-            .toggle-button
-                display: none
-                justify-content: center
-                align-items: center
-                z-index: 99
-                @media (max-width: 768px)
-                    padding-left: 20px
-                .button
-                    height: 2px
-                    width: 30px
-                    background: #00a3e6
-                    position: relative
-                    transition: all 0ms 300ms
-                    &:after
-                        content: ""
-                        position: absolute
-                        left: 0
-                        width: 100%
-                        height: 100%
-                        bottom: 8px
-                        background: #00a3e6
-                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                    &:before
-                        content: ""
-                        position: absolute
-                        left: 0
-                        width: 100%
-                        height: 100%
-                        top: 8px
-                        background: #00a3e6
-                        transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                &.active
-                    .button
-                        background: transparent
-                        &:before
-                            top: 0
-                            transform: rotate(45deg)
-                            transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
-                        &:after
-                            bottom: 0
-                            transform: rotate(-45deg)
-                            transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
         .list-hotro
             list-style: none   
             position: fixed
@@ -316,137 +330,215 @@ header
                     em 
                         font-size: 28px
                         transition: all 0.3s ease-in-out
+        @media (max-width: 768px)
+            .list-hotro
+                top: 200px
+                li 
+                    width: 40px
+                    height: 40px
 @media (max-width: 1025px)
     header
+        .top-head
+            .container 
+                padding: 10px 0
+                .box-l 
+                .box-r
+                    .toggle-button
+                        display: block
+                    .backdrop
+                        position: fixed
+                        width: 100%
+                        height: calc(100vh-57.97px)
+                        opacity: 0
+                        pointer-events: none
+                        transition: .5s ease-in-out
+                        top: 57.97px
+                        left: 0
+                        z-index: 9
+                        background: rgba(0,0,0,.5)
+                        &.active
+                            opacity: 1
+                            pointer-events: initial
+                    .hotro
+                        display: none
+                    .searchbox
+                        display: none
+                    .call 
+                        display: none
+                    .toggle-menu
+                        z-index: 99
+                        .menu-wrapper
+                            padding: 0
+                            .main-menu
+                                display: none
+                        .hotro
+                            display: none
+                            padding: 0
+                            background: none
+                            border-bottom: 1px solid #ebebeb
+                            list-style: none 
+                            margin: 0 20px
+                            li 
+                                display: block
+                                padding: 15px 0px
+                                text-align: left
+                                a 
+                                    color: #333333
+                                    font-weight: 600
+                                    font-size: 13px
+                                    text-transform: uppercase 
+                        .call
+                            display: none
+                        .searchbox
+                            display: none
+                        &.active
+                            overflow-y: auto
+                            &::-webkit-scrollbar
+                                width: 3px
+                            &::-webkit-scrollbar-track
+                                background: #eee
+                            &::-webkit-scrollbar-thumb
+                                background: #00a3e6
+                            .menu-wrapper
+                                .main-menu
+                                    display: block
+                                    margin-top: 5px
+                                    ul 
+                                        li 
+                                            display: block
+                                            text-align: left
+                                            padding: 0 20px
+                                            margin-right: 0
+                                            a 
+                                                font-size: 13px
+                                                color: #333333
+                                                text-transform: uppercase
+                                                font-weight: 600
+                                                padding: 15px 0
+                                                display: block
+                                            &.has-mega
+                                                position: relative
+                                                &:after
+                                                    display: none
+                                                // &:before
+                                                //     font: normal normal normal 24px/1 Material Design Icons
+                                                //     content: '\f35d'
+                                                //     font-size: 24px
+                                                //     color: #333333
+                                                //     position: absolute
+                                                //     right: 25px
+                                                .mega-show
+                                                    position: absolute
+                                                    color: #000000
+                                                    width: 30px
+                                                    right: 20px
+                                                    top: 50%
+                                                    transform: translateY(-50%)
+                                                    font-size: 20px
+                                                    text-align: center
+                                                    display: block
+                                                .mega-wrap
+                                                    background: #ffffff
+                                                    overflow-y: auto
+                                                    position: fixed
+                                                    pointer-events: initial
+                                                    height: calc(100vh - 57.97px)
+                                                    top: 57.97px
+                                                    width: 300px
+                                                    left: -300px
+                                                    right: initial
+                                                    transform: initial
+                                                    z-index: 333
+                                                    transition: .4s ease-in-out all
+                                                    
+                                                    .item 
+                                                        .img 
+                                                            width: auto
+                                                            height: 130px
+                                                            img 
+                                                                width: 100%
+                                                                height: 100%
+                                                                object-fit: scale-down
+                                                    .mega-back
+                                                        display: block
+                                                        flex: 0 0 100% 
+                                                        max-width: 100% 
+                                                        flex-wrap: wrap
+                                                    &.active
+                                                        left: 0
+                                                        transition: all .3s ease-in-out
+                                                        .mega-back
+                                                            display: flex
+                                                            justify-content: center
+                                                            align-items: center
+                                                            text-transform: uppercase
+                                                            margin-top: 20px
+                                                            h4 
+                                                                font-size: 13px
+                                                            em 
+                                                                font-size: 20px 
+                                                                margin-right: 15px
+                                                        .item
+                                                            max-width: 100%
+                                                            flex: 0 0 100% 
+                                                            text-align: center
+                                                            padding: 15px 0
+                                                            margin: 0
+                                                            &.active
+                                                                box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1)                   
+                            .hotro 
+                                display: block
+                            .call
+                                display: block
+                            .searchbox
+                                display: flex
+                                border: none
+                                background: none
+                                justify-content: space-around
+                                padding: 5px 20px
+                                width: 100%
+                                margin-left: auto
+                                input
+                                    border: none
+                                    background: #ebebeb
+                                    padding: 
+                                    color: #999999
+                                    font-size: 16px   
+                                    width: 100%
+                                    font-style: italic
+                                    padding: 0 15px
+                                button
+                                    background: #00a3e6
+                                    padding: 10px
+                                    border: none
+                                    cursor: pointer
+                                    margin-left: 5px
+                                    &:focus
+                                        outline: none
+                                    em 
+                                        color: #ffffff
+                                input,button
+                                    &:focus
+                                        outline: none
+                            .call 
+                                width: 100%
+                                background: none
+                        
+                                color: #ebebeb
+                                padding: 10px 0
+                                padding: 15px 20px
+                                font-weight: 600
+                                font-size: 16px
+                                word-spacing: 5px
+                                color: #00a3e6
+                                em 
+                                    font-weight: 700
+                                    margin-right: 10px
+                                    color: #00a3e6
+                                    transform: rotate(-30deg)
         .ac-home-menu
             .menu-wrapper
-                display: flex
-                align-items: center
-                margin: 0
                 .main-menu
                     display: none
-                    ul 
-                        li 
-                .toggle-button
-                    display: block
-                .toggle-menu
-                    overflow-y: auto
-                    .hotro 
-                        padding: 0
-                        background: #00a3e6 
-                        list-style: none 
-                        li 
-                            padding: 15px 0
-                            text-align: left
-                            padding-left: 40px
-                            a 
-                                color: #ebebeb
-                                font-weight: 600
-                                text-transform: uppercase
-                    &.active
-                        display: block
-                        overflow-y: scroll
-                        
-                        .main-menu
-                            display: block
-                            ul 
-                                li 
-                                    display: block
-                                    text-align: left
-                                    padding-left: 40px
-                                    border: .2px solid #ebebeb
-                                    margin-right: 0
-                                    &.has-mega
-                                        &:after
-                                            top: 30px
-                                            padding-left: 10px
-                                            &.active
-                                                transform: rotate(-90deg)
-                                                top: 26px
-                                        .mega-wrap
-                                            height: 100vh
-                                            flex-direction: column
-                                            width: 300px
-                                            left: -100%
-                                            transition: .5s ease-in-out all
-                                            top: 0
-                                            border: none
-                                            pointer-events: none
-                                            .mega-back
-                                                display: flex
-                                                margin-bottom: 20px
-                                                align-items: center
-                                                text-transform: uppercase
-                                                em
-                                                    font-size: 16px
-                                                    width: 30px
-                                                    text-align: center
-                                                    display: inline-block
-                                            .item
-                                                display: flex
-                                                justify-content: center   
-                                            &.active
-                                                left: 0
-                                                transition: all .3s ease-in-out
-                                                
-                                            
-                .searchbox
-                    display: flex
-                    border: none
-                    background: #ebebeb
-                    justify-content: space-around
-                    margin-right: 20px
-                    padding: 5px 10px
-                    margin-left: auto
-                    input
-                        border: none
-                        background: none
-                        padding: 
-                        color: #f5f5f5
-                        font-size: 16px   
-                        width: 100%
-                        font-style: italic
-                    button
-                        background: none
-                        border: none
-                        cursor: pointer
-                        &:focus
-                            outline: none
-                        em 
-                            color: #f5f5f5
-                    input,button
-                        &:focus
-                            outline: none
-                .call 
-                    width: 100%
-                    background: #333333
-                    color: #ebebeb
-                    padding: 10px 0
-                    text-align: center
-                    em 
-                        margin-right: 10px
-                        transform: rotate(-30deg)
-                .toggle-menu
-                    z-index: 99
-                .backdrop
-                    position: fixed
-                    width: 100%
-                    height: calc(100vh-130px)
-                    opacity: 0
-                    pointer-events: none
-                    transition: .5s ease-in-out
-                    top: 130px
-                    left: 0
-                    z-index: 9
-                    background: rgba(0,0,0,.5)
-                    &.active
-                        opacity: 1
-                        pointer-events: initial
-    .ac-home-menu
-        .menu-wrapper
-            margin: 0 20px
-            .toggle-button
-                left: 20px
-                    
                         
                         

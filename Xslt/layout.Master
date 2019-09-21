@@ -121,6 +121,7 @@ Facebook: https://fb.com/canhcam.vn
             <div id="wrapper">
                 <header> 
 			<div class="top-head">
+                <div class="top-wrapper">
 				<div class="container">
 					<div class="box-l">
 						<div class="logo-ac"><portal:modulewrapper id="mdl206" runat="server" configuremoduleid="206" /></div>
@@ -130,22 +131,22 @@ Facebook: https://fb.com/canhcam.vn
 							<portal:modulewrapper id="mdl211" runat="server" configuremoduleid="211" />
 						</ul>
                             <portal:modulewrapper id="mdl209" runat="server" configuremoduleid="209" />
-						
 						<div class="call"><portal:modulewrapper id="mdl208" runat="server" configuremoduleid="208" /></div>
-						<portal:modulewrapper id="mdl210" runat="server" configuremoduleid="210" />
+                        <portal:modulewrapper id="mdl210" runat="server" configuremoduleid="210" />
+                            <div class="toggle-button">
+                                <div class="button"></div>
+                            </div>
+                        <div class="toggle-menu"></div>
+                        <div class="backdrop"></div>
 					</div>
 				</div>
+                </div>
 			</div>
 			<div class="ac-home-menu container">
 				<div class="menu-wrapper">
 					<div class="main-menu">
                             <portal:modulewrapper id="mdl214" runat="server" configuremoduleid="214" />
 					</div>
-					<div class="toggle-button">
-						<div class="button"></div>
-					</div>
-					<div class="toggle-menu"></div>
-                    <div class="backdrop"></div>
 				</div>
                 <div class="list-hotro"> 
                     <portal:modulewrapper id="mdl2385" runat="server" configuremoduleid="2385" />
